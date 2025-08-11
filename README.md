@@ -10,6 +10,50 @@ Incluye una función que calcula la mejor combinación de productos sin exceder 
 
 ## Requisitos
 - Go 1.20+
+  
+##Endpoints
+- GET /products:
+ Response ([
+  { "id": 1, "name": "Producto 1", "price": 100 },
+  { "id": 2, "name": "Producto 2", "price": 200 }
+])
+- POST /cart:
+Request (
+{ "id": 1 } )
+Response 
+   ( "items": [
+        {
+            "product": {
+                "id": 1,
+                "name": "Producto 1",
+                "price": 60
+            },
+            "quantity": 2
+        }
+    "total": 60
+})
+- GET /cart:
+Response 
+   ( "items": [
+        {
+            "product": {
+                "id": 1,
+                "name": "Producto 1",
+                "price": 60
+            },
+            "quantity": 2
+        },
+        {
+            "product": {
+                "id": 4,
+                "name": "Producto 4",
+                "price": 70
+            },
+            "quantity": 1
+        }
+    ],
+    "total": 190
+})
 
 ## Cómo correr
 ### Backend
