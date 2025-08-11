@@ -1,15 +1,19 @@
+# Shopping Cart App (Prueba Técnica)
 
----
+Pequeña app de carrito de compras: **API** (sin BD, datos estáticos) + **Frontend** en React.
+La API expone `/products` y `/cart` (GET/POST). El front consume la API, muestra productos y permite agregarlos al carrito.
+Incluye una función que calcula la mejor combinación de productos sin exceder un presupuesto.
 
-# README (backend)
-
-```markdown
-# Shopping Cart API (Go)
-
-API simple sin base de datos. Usa:
-- **/products**: lista estática desde `products.json`
-- **/cart** (POST): agrega producto por `id` al carrito (en memoria)
-- **/cart** (GET): devuelve el carrito
+## Estructura
+- `backend/` — API en Go, carrito en memoria, productos desde JSON estático.
+- `frontend/` — React, consume la API y renderiza lista y carrito.
 
 ## Requisitos
 - Go 1.20+
+
+## Cómo correr
+### Backend
+```bash
+go mod tidy
+go run main.go
+# API en: http://localhost:8080
